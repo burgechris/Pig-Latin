@@ -1,12 +1,16 @@
-
+//UI Logic
 
 $(document).ready(function(){
   $('.translator').submit(function(event){
     event.preventDefault();
     var userInput = $('#userInput').val();
-    console.log(userInput);
+    var wordArray = userInput.split(" ");
     var vowels = ["a", "e", "i", "o", "u"];
+    var endResult = pigLatin(userInput);
+    console.log(wordArray);
+//Business Logic
 
+    function pigLatin(userInput) {
     if (vowels.includes(userInput.charAt(0))) {
       console.log(userInput.concat('yay'));
     }  else {
@@ -33,10 +37,7 @@ $(document).ready(function(){
           break;
         }
       }
-
     }
-
-
-
+  }
   });
 });
